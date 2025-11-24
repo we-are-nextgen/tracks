@@ -1,5 +1,6 @@
 # Track metadata
 name: JavaScript Fundamentals
+UUID: js-fundamentals
 description: >
   Learn the fundamentals of JavaScript including variables, functions, and DOM manipulation.
 icon: Code2
@@ -13,6 +14,7 @@ community: "Contribute to startup MVPs or open-source projects"
 labs:
   
   - name: Functions & Scope
+    UUID: js-func-scope
     description: >
       Learn about functions, parameters, return values, and variable scope.
     icon: Function
