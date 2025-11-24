@@ -12,7 +12,25 @@ community: "Contribute to startup MVPs or open-source projects"
 
 # Labs associated with this track
 labs:
-  
+  - name: Variables & Data Types
+    description: >
+      Understand how to declare variables and use different data types in JavaScript.
+    icon: DataType
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 30
+    hasBonusTasks: true
+
+    # Lab content
+    contentMarkdown: "labs/variables/README.md"
+    contentHtml: "labs/variables/README.html"
+
+    # Optional assets folder
+    assets:
+      - path: "labs/variables/sample-code.js"
+        type: "code"
+      - path: "labs/variables/diagram.png"
+        type: "image"
+          
   - name: Functions & Scope
     UUID: js-func-scope
     description: >
