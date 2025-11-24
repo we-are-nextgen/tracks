@@ -24,6 +24,10 @@ labs:
     contentHtml: "labs/functions/README.html"
 
     assets:
-      - path: "labs/functions/example.js"
+      - p ath: "labs/functions/example.js"
         type: "code"
+      - p ath: "labs/functions/FUNCTIONS.md"
+        type: "md"
+      - p ath: "labs/functions/LEARNING.md"
+        type: "md"
 
