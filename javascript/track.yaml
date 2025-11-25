@@ -24,13 +24,46 @@ labs:
     contentMarkdown: "labs/variables/README.md"
     contentHtml: "labs/variables/README.html"
 
-    # Optional assets folder
     assets:
       - path: "labs/variables/sample-code.js"
         type: "code"
       - path: "labs/variables/diagram.png"
         type: "image"
-          
+
+    exercises:
+      - title: "What is the type?"
+        type: MCQ
+        question: |
+          What is the type of:
+          const x = "10";
+          console.log(typeof x);
+        options: ["number", "string", "object", "undefined"]
+        correctAnswer: "string"
+        points: 5
+
+      - title: "Boolean check"
+        type: TRUE_FALSE
+        question: "The value `0` is considered false in JavaScript."
+        correctAnswer: "true"
+        points: 3
+
+      - title: "Fix the variable declaration"
+        type: CODE
+        question: |
+          The following code throws an error. Fix it:
+          const x;
+          x = 10;
+        correctAnswer: |
+          let x;
+          x = 10;
+        points: 8
+
+      - title: "Explain the difference between let and var"
+        type: TEXT
+        question: "In your own words, explain how let differs from var."
+        correctAnswer: ""
+        points: 4
+
   - name: Functions & Scope
     UUID: js-func-scope
     description: >
@@ -50,9 +83,10 @@ labs:
         type: "md"
       - path: "labs/functions/LEARNING.md"
         type: "md"
+
     exercises:
       - title: "What is the output?"
-        type: "MCQ"
+        type: MCQ
         question: |
           What is the output of:
           console.log(typeof 123);
@@ -61,8 +95,25 @@ labs:
         points: 5
 
       - title: "Write a function"
-        type: "CODE"
+        type: CODE
         question: "Write a JS function that returns the sum of two numbers"
         correctAnswer: |
           function sum(a,b){ return a+b; }
         points: 10
+
+      - title: "Block scope"
+        type: TRUE_FALSE
+        question: "Variables declared with let are block-scoped."
+        correctAnswer: "true"
+        points: 3
+
+      - title: "Debug the function"
+        type: TEXT
+        question: |
+          The following function always returns undefined.
+          Explain why and how to fix it:
+          function add(a,b) {
+            console.log(a + b);
+          }
+        correctAnswer: ""
+        points: 4
