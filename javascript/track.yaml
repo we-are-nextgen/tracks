@@ -50,4 +50,19 @@ labs:
         type: "md"
       - path: "labs/functions/LEARNING.md"
         type: "md"
+    exercises:
+      - title: "What is the output?"
+        type: "MCQ"
+        question: |
+          What is the output of:
+          console.log(typeof 123);
+        options: ["number", "string", "Integer", "undefined"]
+        correctAnswer: "number"
+        points: 5
 
+      - title: "Write a function"
+        type: "CODE"
+        question: "Write a JS function that returns the sum of two numbers"
+        correctAnswer: |
+          function sum(a,b){ return a+b; }
+        points: 10
