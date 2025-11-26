@@ -19,7 +19,7 @@ labs:
     difficultyLevel: BEGINNER
     estimatedTimeMin: 30
     hasBonusTasks: true
-    squence: 1
+    sequence: 1
 
     # Lab content
     contentMarkdown: "labs/variables/README.md"
@@ -73,7 +73,7 @@ labs:
     difficultyLevel: BEGINNER
     estimatedTimeMin: 45
     hasBonusTasks: false
-    squence: 2
+    sequence: 2
 
     contentMarkdown: "labs/functions/README.md"
     contentHtml: "labs/functions/README.html"
