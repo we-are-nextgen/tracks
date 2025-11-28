@@ -98,7 +98,7 @@ labs:
 
       - title: "Write a function"
         type: CODE
-        question: "Write a JS function that returns the sum of two numbers"
+        question: "Write a JS function sum, that returns the sum of two numbers a and b"
         correctAnswer: |
           function sum(a,b){ return a+b; }
         points: 10
