@@ -2,7 +2,8 @@
 name: JavaScript Fundamentals
 UUID: js-fundamentals
 description: >
-  Learn the fundamentals of JavaScript including variables, functions, and DOM manipulation.
+  Learn the fundamentals of JavaScript including variables, functions, objects,
+  arrays, loops, DOM manipulation, asynchronous JS, and event handling.
 icon: Code2
 difficultyLevel: BEGINNER
 estimatedTimeMin: 180
@@ -12,6 +13,9 @@ community: "Contribute to startup MVPs or open-source projects"
 
 # Labs associated with this track
 labs:
+  # ───────────────────────────────────────────────────────────────
+  # 1. VARIABLES & DATA TYPES
+  # ───────────────────────────────────────────────────────────────
   - name: Variables & Data Types
     description: >
       Understand how to declare variables and use different data types in JavaScript.
@@ -21,7 +25,6 @@ labs:
     hasBonusTasks: true
     sequence: 1
 
-    # Lab content
     contentMarkdown: "labs/variables/README.md"
     contentHtml: "labs/variables/README.html"
 
@@ -65,6 +68,9 @@ labs:
         correctAnswer: ""
         points: 4
 
+  # ───────────────────────────────────────────────────────────────
+  # 2. FUNCTIONS & SCOPE
+  # ───────────────────────────────────────────────────────────────
   - name: Functions & Scope
     UUID: js-func-scope
     description: >
@@ -119,3 +125,294 @@ labs:
           }
         correctAnswer: ""
         points: 4
+
+
+  # ───────────────────────────────────────────────────────────────
+  # 3. OBJECTS & ARRAYS (NEW)
+  # ───────────────────────────────────────────────────────────────
+  - name: Objects & Arrays
+    UUID: js-objects-arrays
+    description: >
+      Learn how to work with JavaScript objects, arrays, destructuring,
+      and array manipulation methods.
+    icon: Braces
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 40
+    hasBonusTasks: false
+    sequence: 3
+
+    contentMarkdown: "labs/objects/README.md"
+    contentHtml: "labs/objects/README.html"
+
+    assets:
+      - path: "labs/objects/example.js"
+        type: "code"
+      - path: "labs/objects/structure.png"
+        type: "image"
+
+    exercises:
+      - title: "Access object property"
+        type: MCQ
+        question: |
+          What is the output?
+          const user = { name: "Sam", age: 22 };
+          console.log(user.age);
+        options: ["name", "Sam", "22", "undefined"]
+        correctAnswer: "22"
+        points: 4
+
+      - title: "Array length"
+        type: TRUE_FALSE
+        question: "The `.length` of an array counts the number of elements."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Destructure object"
+        type: CODE
+        question: |
+          Extract the `age` property into a variable:
+          const person = { name: "Ava", age: 30 };
+        correctAnswer: |
+          const { age } = person;
+        points: 6
+
+      - title: "Filter array"
+        type: CODE
+        question: |
+          Write code that returns only even numbers from:
+          const nums = [1,2,3,4,5];
+        correctAnswer: |
+          nums.filter(n => n % 2 === 0);
+        points: 6
+
+      - title: "Explain immutability"
+        type: TEXT
+        question: "Why is avoiding direct object mutation helpful?"
+        correctAnswer: ""
+        points: 4
+
+      - title: "Array push"
+        type: MCQ
+        question: |
+          What does `arr.push(x)` return?
+        options: ["the new array", "the removed item", "the new length", "undefined"]
+        correctAnswer: "the new length"
+        points: 3
+
+      - title: "Find item"
+        type: CODE
+        question: "Find the first number > 10 in nums: const nums=[5,12,8,20];"
+        correctAnswer: |
+          nums.find(n => n > 10);
+        points: 5
+
+      - title: "Spread operator"
+        type: TEXT
+        question: "Explain what the spread operator (...) does for arrays."
+        correctAnswer: ""
+        points: 3
+
+      - title: "Sort array"
+        type: CODE
+        question: "Sort numbers ascending: const arr = [3,1,2];"
+        correctAnswer: |
+          arr.sort((a,b)=>a-b);
+        points: 5
+
+      - title: "Map transformation"
+        type: CODE
+        question: "Return an array of doubled values: [1,2,3]"
+        correctAnswer: |
+          [1,2,3].map(x => x*2);
+        points: 4
+
+
+  # ───────────────────────────────────────────────────────────────
+  # 4. LOOPS & CONTROL FLOW (NEW)
+  # ───────────────────────────────────────────────────────────────
+  - name: Loops & Control Flow
+    UUID: js-loops-flow
+    description: >
+      Learn how loops, iteration, and decision structures work.
+    icon: Repeat
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 40
+    hasBonusTasks: false
+    sequence: 4
+
+    contentMarkdown: "labs/loops/README.md"
+    contentHtml: "labs/loops/README.html"
+
+    assets:
+      - path: "labs/loops/flowchart.png"
+        type: "image"
+
+    exercises:
+      - title: "Loop output"
+        type: MCQ
+        question: |
+          How many times will this run?
+          for (let i=0; i<3; i++) { console.log(i); }
+        options: ["1", "2", "3", "4"]
+        correctAnswer: "3"
+        points: 4
+
+      - title: "While loop condition"
+        type: TRUE_FALSE
+        question: "A while loop may never execute if its condition is false at the beginning."
+        correctAnswer: "true"
+        points: 3
+
+      - title: "Fix infinite loop"
+        type: CODE
+        question: |
+          Fix this:
+          let x = 0;
+          while (x < 5) {
+            console.log(x);
+          }
+        correctAnswer: |
+          let x = 0;
+          while (x < 5) {
+            console.log(x);
+            x++;
+          }
+        points: 6
+
+      - title: "Switch case"
+        type: MCQ
+        question: "Which keyword ends a switch case?"
+        options: ["stop", "terminate", "break", "return"]
+        correctAnswer: "break"
+        points: 3
+
+      - title: "Explain loop choice"
+        type: TEXT
+        question: "When would you prefer forEach over a for-loop?"
+        correctAnswer: ""
+        points: 3
+
+      - title: "Continue keyword"
+        type: TRUE_FALSE
+        question: "The `continue` keyword skips the current iteration."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Loop sum"
+        type: CODE
+        question: "Sum numbers 1 to 5 using a loop."
+        correctAnswer: |
+          let sum=0;
+          for(let i=1;i<=5;i++){ sum+=i; }
+        points: 5
+
+      - title: "Nested loops"
+        type: TEXT
+        question: "What is a drawback of using nested loops?"
+        correctAnswer: ""
+        points: 3
+
+      - title: "Ternary operator"
+        type: MCQ
+        question: "Which operator is the ternary operator in JS?"
+        options: ["?:", "??", "=>", "::"]
+        correctAnswer: "?:"
+        points: 3
+
+      - title: "Break vs return"
+        type: TEXT
+        question: "Explain when you'd use break instead of return."
+        correctAnswer: ""
+        points: 3
+
+
+  # ───────────────────────────────────────────────────────────────
+  # 5. DOM & EVENTS (NEW)
+  # ───────────────────────────────────────────────────────────────
+  - name: DOM & Events
+    UUID: js-dom-events
+    description: >
+      Learn how to select elements, update the DOM, and attach event listeners.
+    icon: LayoutDashboard
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 50
+    hasBonusTasks: true
+    sequence: 5
+
+    contentMarkdown: "labs/dom/README.md"
+    contentHtml: "labs/dom/README.html"
+
+    assets:
+      - path: "labs/dom/example.html"
+        type: "html"
+      - path: "labs/dom/dom.png"
+        type: "image"
+
+    exercises:
+      - title: "Select element"
+        type: MCQ
+        question: |
+          Which method selects an element by ID?
+        options: ["getElement()", "selectId()", "query()", "document.getElementById()"]
+        correctAnswer: "document.getElementById()"
+        points: 4
+
+      - title: "Click event"
+        type: CODE
+        question: "Add a click listener to a button with id='btn'."
+        correctAnswer: |
+          document.getElementById("btn").addEventListener("click", ()=>{});
+        points: 6
+
+      - title: "Text content"
+        type: TRUE_FALSE
+        question: "`innerText` and `textContent` always behave the same."
+        correctAnswer: "false"
+        points: 2
+
+      - title: "Modify DOM"
+        type: CODE
+        question: "Change an element's text to 'Hello': const el = document.querySelector('#msg');"
+        correctAnswer: |
+          el.textContent = "Hello";
+        points: 5
+
+      - title: "Explain bubbling"
+        type: TEXT
+        question: "What is event bubbling in the DOM?"
+        correctAnswer: ""
+        points: 4
+
+      - title: "Prevent default"
+        type: CODE
+        question: "Prevent a form from submitting."
+        correctAnswer: |
+          form.addEventListener("submit", e => e.preventDefault());
+        points: 5
+
+      - title: "querySelector"
+        type: MCQ
+        question: "What does document.querySelector('.item') return?"
+        options: ["all items", "first item", "undefined", "a NodeList"]
+        correctAnswer: "first item"
+        points: 3
+
+      - title: "Keyboard event"
+        type: TEXT
+        question: "When would you use a keydown event?"
+        correctAnswer: ""
+        points: 3
+
+      - title: "Add element"
+        type: CODE
+        question: "Create and append a div to body."
+        correctAnswer: |
+          const d=document.createElement("div");
+          document.body.appendChild(d);
+        points: 6
+
+      - title: "Remove element"
+        type: CODE
+        question: "Remove element el from DOM."
+        correctAnswer: "el.remove();"
+        points: 3
