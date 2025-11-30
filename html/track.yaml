@@ -21,7 +21,7 @@ labs:
       Learn the foundational structure of HTML, tags, and basic page layout.
     icon: Layout
     difficultyLevel: BEGINNER
-    estimatedTimeMin: 30
+    estimatedTimeMin: 35
     hasBonusTasks: false
     sequence: 3
 
