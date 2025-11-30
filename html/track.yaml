@@ -1,72 +1,469 @@
 # Track metadata
-name: JavaScript Fundamentals
+name: HTML Basics
+UUID: html-basics
 description: >
-  Learn the fundamentals of JavaScript including variables, functions, and DOM manipulation.
+  Learn the basics of HTML.
 icon: Code2
 difficultyLevel: BEGINNER
-estimatedTimeMin: 180
-rewardPoints: 50
+estimatedTimeMin: 90
+rewardPoints: 25
 domainName: Software & Application Engineering
-
-tags:
-  - JavaScript
-  - Frontend
-  - Web Development
-prerequisites:
-  - Basic HTML & CSS
 community: "Contribute to startup MVPs or open-source projects"
 
 # Labs associated with this track
 labs:
-  - name: Variables & Data Types
+  ##########################################################################
+  #                             HTML LABS ADDED
+  ##########################################################################
+
+  - name: HTML Basics
     description: >
-      Understand how to declare variables and use different data types in JavaScript.
-    icon: DataType
+      Learn the foundational structure of HTML, tags, and basic page layout.
+    icon: Layout
     difficultyLevel: BEGINNER
     estimatedTimeMin: 30
-    hasBonusTasks: true
-
-    # Lab content
-    contentMarkdown: "labs/variables/README.md"
-    contentHtml: "labs/variables/README.html"
-
-    # Optional assets folder
-    assets:
-      - path: "labs/variables/sample-code.js"
-        type: "code"
-      - path: "labs/variables/diagram.png"
-        type: "image"
-
-  - name: Functions & Scope
-    description: >
-      Learn about functions, parameters, return values, and variable scope.
-    icon: Function
-    difficultyLevel: BEGINNER
-    estimatedTimeMin: 45
     hasBonusTasks: false
+    sequence: 3
 
-    contentMarkdown: "labs/functions/README.md"
-    contentHtml: "labs/functions/README.html"
+    contentMarkdown: "labs/html-basics/README.md"
+    contentHtml: "labs/html-basics/README.html"
 
-    assets:
-      - path: "labs/functions/example.js"
-        type: "code"
+    exercises:
+      - title: "Identify the root element"
+        type: MCQ
+        question: "What is the root element of any HTML document?"
+        options: ["<body>", "<html>", "<head>", "<main>"]
+        correctAnswer: "<html>"
+        points: 3
 
-  - name: DOM Manipulation
+      - title: "True or false: HTML is a programming language"
+        type: TRUE_FALSE
+        question: "HTML is considered a programming language."
+        correctAnswer: "false"
+        points: 2
+
+      - title: "Fix missing tags"
+        type: CODE
+        question: |
+          Fix this HTML snippet:
+          <html>
+            <head>
+            <body>
+              <h1>Hello
+            </body>
+          </html>
+        correctAnswer: |
+          <html>
+            <head></head>
+            <body>
+              <h1>Hello</h1>
+            </body>
+          </html>
+        points: 8
+
+      - title: "Explain: What is HTML?"
+        type: TEXT
+        question: "Describe what HTML is used for."
+        correctAnswer: ""
+        points: 4
+
+      - title: "What does <title> affect?"
+        type: MCQ
+        question: "What does the <title> tag control?"
+        options: ["The page header", "The page content", "The browser tab title", "The footer"]
+        correctAnswer: "The browser tab title"
+        points: 3
+
+      - title: "Is <br> self-closing?"
+        type: TRUE_FALSE
+        question: "The <br> tag is a self-closing tag."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix indentation"
+        type: CODE
+        question: |
+          Clean up indentation:
+          <html>
+          <body>
+          <p>Hello</p>
+          </body>
+          </html>
+        correctAnswer: |
+          <html>
+            <body>
+              <p>Hello</p>
+            </body>
+          </html>
+        points: 5
+
+      - title: "Purpose of <meta>"
+        type: TEXT
+        question: "What is the purpose of meta tags?"
+        points: 3
+
+      - title: "Which attribute?"
+        type: MCQ
+        question: "Which attribute sets an image’s alternative text?"
+        options: ["src", "alt", "href", "name"]
+        correctAnswer: "alt"
+        points: 3
+
+      - title: "True or false: <div> is semantic"
+        type: TRUE_FALSE
+        question: "<div> is considered a semantic tag."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Forms
     description: >
-      Learn how to manipulate the DOM to make interactive web pages.
-    icon: DOM
+      Learn how to build forms, input fields, labels, and submit actions.
+    icon: FileInput
     difficultyLevel: BEGINNER
-    estimatedTimeMin: 60
-    hasBonusTasks: true
+    estimatedTimeMin: 40
+    hasBonusTasks: false
+    sequence: 4
 
-    contentMarkdown: "labs/dom/README.md"
-    contentHtml: "labs/dom/README.html"
+    contentMarkdown: "labs/html-forms/README.md"
+    contentHtml: "labs/html-forms/README.html"
 
-    assets:
-      - path: "labs/dom/demo.html"
-        type: "code"
-      - path: "labs/dom/demo.css"
-        type: "code"
-      - path: "labs/dom/demo.png"
-        type: "image"
+    exercises:
+      - title: "What is the correct input type?"
+        type: MCQ
+        question: "Which type do you use for an email field?"
+        options: ["text", "email", "mail", "submit"]
+        correctAnswer: "email"
+        points: 3
+
+      - title: "Form submit behavior"
+        type: TRUE_FALSE
+        question: "A form submission reloads the page by default."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the form"
+        type: CODE
+        question: |
+          Fix invalid form markup:
+          <form>
+            <label>Email</label>
+            <input>
+            <button>Submit</button>
+          </form>
+        correctAnswer: |
+          <form>
+            <label for="email">Email</label>
+            <input id="email" type="email" />
+            <button type="submit">Submit</button>
+          </form>
+        points: 8
+
+      - title: "Explain autocomplete"
+        type: TEXT
+        question: "What does the autocomplete attribute do?"
+        points: 4
+
+      - title: "Which input for range?"
+        type: MCQ
+        question: "Which input type creates a slider?"
+        options: ["number", "range", "scroll", "slide"]
+        correctAnswer: "range"
+        points: 3
+
+      - title: "Required field"
+        type: TRUE_FALSE
+        question: "Adding required prevents form submission if empty."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add placeholder"
+        type: CODE
+        question: |
+          Add a placeholder to this field:
+          <input type="text" />
+        correctAnswer: |
+          <input type="text" placeholder="Enter text" />
+        points: 3
+
+      - title: "Explain label for"
+        type: TEXT
+        question: "Why is the 'for' attribute important in labels?"
+        points: 3
+
+      - title: "What is <fieldset> for?"
+        type: MCQ
+        question: "What is the purpose of <fieldset>?"
+        options: ["Layout", "Grouping form controls", "Navigation", "Styling"]
+        correctAnswer: "Grouping form controls"
+        points: 3
+
+      - title: "Can inputs be nested?"
+        type: TRUE_FALSE
+        question: "You can nest input elements inside each other."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Semantic Elements
+    description: >
+      Learn semantic tags such as header, footer, article, nav, and section.
+    icon: Blocks
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 35
+    sequence: 5
+
+    contentMarkdown: "labs/html-semantic/README.md"
+    contentHtml: "labs/html-semantic/README.html"
+
+    exercises:
+      - title: "Main purpose"
+        type: MCQ
+        question: "What is the purpose of semantic HTML?"
+        options: [
+          "To make pages pretty",
+          "To give meaning and structure",
+          "To add animations",
+          "To load faster"
+        ]
+        correctAnswer: "To give meaning and structure"
+        points: 4
+
+      - title: "Is <section> semantic?"
+        type: TRUE_FALSE
+        question: "<section> is considered a semantic tag."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the layout"
+        type: CODE
+        question: |
+          Write a semantic structure replacing <div> placeholders:
+          <div>header</div>
+          <div>nav</div>
+          <div>main</div>
+          <div>footer</div>
+        correctAnswer: |
+          <header></header>
+          <nav></nav>
+          <main></main>
+          <footer></footer>
+        points: 8
+
+      - title: "Explain <article>"
+        type: TEXT
+        question: "When should the <article> element be used?"
+        points: 4
+
+      - title: "Which tag?"
+        type: MCQ
+        question: "Which tag represents standalone content?"
+        options: ["section", "article", "span", "aside"]
+        correctAnswer: "article"
+        points: 3
+
+      - title: "Is <b> semantic?"
+        type: TRUE_FALSE
+        question: "<b> is a semantic tag."
+        correctAnswer: "false"
+        points: 2
+
+      - title: "Fix heading order"
+        type: CODE
+        question: |
+          Fix this heading structure:
+          <h1>Main</h1>
+          <h4>Sub</h4>
+          <h2>Another</h2>
+        correctAnswer: |
+          <h1>Main</h1>
+          <h2>Sub</h2>
+          <h2>Another</h2>
+        points: 6
+
+      - title: "Explain <aside>"
+        type: TEXT
+        question: "What type of content belongs inside <aside>?"
+        points: 3
+
+      - title: "Choose correct tag"
+        type: MCQ
+        question: "Which tag defines navigation links?"
+        options: ["menu", "navigate", "nav", "path"]
+        correctAnswer: "nav"
+        points: 3
+
+      - title: "True/false: <main> can be multiple"
+        type: TRUE_FALSE
+        question: "A page can contain multiple <main> elements."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Links & Media
+    description: >
+      Learn how to use anchor tags, images, video, and audio in HTML.
+    icon: Image
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 35
+    sequence: 6
+
+    contentMarkdown: "labs/html-media/README.md"
+    contentHtml: "labs/html-media/README.html"
+
+    exercises:
+      - title: "Correct attribute for link"
+        type: MCQ
+        question: "Which attribute specifies a link’s destination URL?"
+        options: ["href", "src", "url", "path"]
+        correctAnswer: "href"
+        points: 3
+
+      - title: "Image alt"
+        type: TRUE_FALSE
+        question: "The alt attribute is required for images."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the link"
+        type: CODE
+        question: |
+          Fix this broken anchor:
+          <a google.com>Search</a>
+        correctAnswer: |
+          <a href="https://google.com">Search</a>
+        points: 6
+
+      - title: "Explain autoplay"
+        type: TEXT
+        question: "Why should autoplay be used cautiously for video?"
+        points: 3
+
+      - title: "Which tag displays audio?"
+        type: MCQ
+        question: "Which element is used to embed audio?"
+        options: ["<mp3>", "<audio>", "<music>", "<sound>"]
+        correctAnswer: "<audio>"
+        points: 3
+
+      - title: "True/false: Videos need controls"
+        type: TRUE_FALSE
+        question: "The controls attribute allows users to play/pause video."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add image attributes"
+        type: CODE
+        question: |
+          Add width=200 and alt="Logo":
+          <img src="logo.png">
+        correctAnswer: |
+          <img src="logo.png" width="200" alt="Logo">
+        points: 5
+
+      - title: "Explain <source>"
+        type: TEXT
+        question: "Why do video/audio tags use <source> elements?"
+        points: 3
+
+      - title: "Which attribute opens new tab?"
+        type: MCQ
+        question: "Which attribute opens a link in a new tab?"
+        options: ["blank", "new", "target='_blank'", "open"]
+        correctAnswer: "target='_blank'"
+        points: 3
+
+      - title: "True/false: <img> needs closing"
+        type: TRUE_FALSE
+        question: "The <img> tag requires a closing tag."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Tables
+    description: >
+      Learn how to create tables, rows, headers, and cells.
+    icon: Table
+    difficultyLevel: BEGINNER
+    sequence: 7
+    estimatedTimeMin: 30
+
+    contentMarkdown: "labs/html-tables/README.md"
+    contentHtml: "labs/html-tables/README.html"
+
+    exercises:
+      - title: "Table header tag"
+        type: MCQ
+        question: "Which tag defines a table header cell?"
+        options: ["<td>", "<thead>", "<th>", "<hc>"]
+        correctAnswer: "<th>"
+        points: 3
+
+      - title: "Row element"
+        type: TRUE_FALSE
+        question: "<tr> defines a table row."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the table"
+        type: CODE
+        question: |
+          Fix this invalid table:
+          <table>
+            <td>Hello</td>
+          </table>
+        correctAnswer: |
+          <table>
+            <tr><td>Hello</td></tr>
+          </table>
+        points: 6
+
+      - title: "Explain <thead> vs <tbody>"
+        type: TEXT
+        question: "What is the difference between <thead> and <tbody>?"
+        points: 3
+
+      - title: "Which tag spans columns?"
+        type: MCQ
+        question: "Which attribute merges multiple columns?"
+        options: ["columns", "span", "colspan", "merge"]
+        correctAnswer: "colspan"
+        points: 3
+
+      - title: "True/false: <caption> describes table"
+        type: TRUE_FALSE
+        question: "<caption> gives a title/description to a table."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add table headers"
+        type: CODE
+        question: |
+          Add headers Name and Age:
+          <table>
+            <tr><td>Alice</td><td>20</td></tr>
+          </table>
+        correctAnswer: |
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Age</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Alice</td><td>20</td></tr>
+            </tbody>
+          </table>
+        points: 7
+
+      - title: "Explain when to use <tfoot>"
+        type: TEXT
+        question: "What content belongs inside <tfoot>?"
+        points: 3
+
+      - title: "Which tag for cell?"
+        type: MCQ
+        question: "Which tag defines a standard cell?"
+        options: ["<td>", "<tr>", "<table>", "<tdata>"]
+        correctAnswer: "<td>"
+        points: 3
+
+      - title: "True/false: Tables are for layout"
+        type: TRUE_FALSE
+        question: "Tables should be used for layout instead of CSS."
+        correctAnswer: "false"
+        points: 2
