@@ -2,8 +2,8 @@
 name: JavaScript Fundamentals
 UUID: js-fundamentals
 description: >
-  Learn the fundamentals of JavaScript including variables, functions, objects,
-  arrays, loops, DOM manipulation, asynchronous JS, and event handling.
+  Learn the fundamentals of JavaScript including variables, functions,
+  DOM manipulation, and core web foundations like HTML.
 icon: Code2
 difficultyLevel: BEGINNER
 estimatedTimeMin: 180
@@ -13,9 +13,10 @@ community: "Contribute to startup MVPs or open-source projects"
 
 # Labs associated with this track
 labs:
-  # ───────────────────────────────────────────────────────────────
-  # 1. VARIABLES & DATA TYPES
-  # ───────────────────────────────────────────────────────────────
+  ##########################################################################
+  #                               JS LABS
+  ##########################################################################
+
   - name: Variables & Data Types
     description: >
       Understand how to declare variables and use different data types in JavaScript.
@@ -68,9 +69,6 @@ labs:
         correctAnswer: ""
         points: 4
 
-  # ───────────────────────────────────────────────────────────────
-  # 2. FUNCTIONS & SCOPE
-  # ───────────────────────────────────────────────────────────────
   - name: Functions & Scope
     UUID: js-func-scope
     description: >
@@ -126,293 +124,458 @@ labs:
         correctAnswer: ""
         points: 4
 
+  ##########################################################################
+  #                             HTML LABS ADDED
+  ##########################################################################
 
-  # ───────────────────────────────────────────────────────────────
-  # 3. OBJECTS & ARRAYS (NEW)
-  # ───────────────────────────────────────────────────────────────
-  - name: Objects & Arrays
-    UUID: js-objects-arrays
+  - name: HTML Basics
     description: >
-      Learn how to work with JavaScript objects, arrays, destructuring,
-      and array manipulation methods.
-    icon: Braces
+      Learn the foundational structure of HTML, tags, and basic page layout.
+    icon: Layout
     difficultyLevel: BEGINNER
-    estimatedTimeMin: 40
+    estimatedTimeMin: 30
     hasBonusTasks: false
     sequence: 3
 
-    contentMarkdown: "labs/objects/README.md"
-    contentHtml: "labs/objects/README.html"
-
-    assets:
-      - path: "labs/objects/example.js"
-        type: "code"
-      - path: "labs/objects/structure.png"
-        type: "image"
+    contentMarkdown: "labs/html-basics/README.md"
+    contentHtml: "labs/html-basics/README.html"
 
     exercises:
-      - title: "Access object property"
+      - title: "Identify the root element"
         type: MCQ
+        question: "What is the root element of any HTML document?"
+        options: ["<body>", "<html>", "<head>", "<main>"]
+        correctAnswer: "<html>"
+        points: 3
+
+      - title: "True or false: HTML is a programming language"
+        type: TRUE_FALSE
+        question: "HTML is considered a programming language."
+        correctAnswer: "false"
+        points: 2
+
+      - title: "Fix missing tags"
+        type: CODE
         question: |
-          What is the output?
-          const user = { name: "Sam", age: 22 };
-          console.log(user.age);
-        options: ["name", "Sam", "22", "undefined"]
-        correctAnswer: "22"
+          Fix this HTML snippet:
+          <html>
+            <head>
+            <body>
+              <h1>Hello
+            </body>
+          </html>
+        correctAnswer: |
+          <html>
+            <head></head>
+            <body>
+              <h1>Hello</h1>
+            </body>
+          </html>
+        points: 8
+
+      - title: "Explain: What is HTML?"
+        type: TEXT
+        question: "Describe what HTML is used for."
+        correctAnswer: ""
         points: 4
 
-      - title: "Array length"
+      - title: "What does <title> affect?"
+        type: MCQ
+        question: "What does the <title> tag control?"
+        options: ["The page header", "The page content", "The browser tab title", "The footer"]
+        correctAnswer: "The browser tab title"
+        points: 3
+
+      - title: "Is <br> self-closing?"
         type: TRUE_FALSE
-        question: "The `.length` of an array counts the number of elements."
+        question: "The <br> tag is a self-closing tag."
         correctAnswer: "true"
         points: 2
 
-      - title: "Destructure object"
+      - title: "Fix indentation"
         type: CODE
         question: |
-          Extract the `age` property into a variable:
-          const person = { name: "Ava", age: 30 };
+          Clean up indentation:
+          <html>
+          <body>
+          <p>Hello</p>
+          </body>
+          </html>
         correctAnswer: |
-          const { age } = person;
-        points: 6
+          <html>
+            <body>
+              <p>Hello</p>
+            </body>
+          </html>
+        points: 5
 
-      - title: "Filter array"
-        type: CODE
-        question: |
-          Write code that returns only even numbers from:
-          const nums = [1,2,3,4,5];
-        correctAnswer: |
-          nums.filter(n => n % 2 === 0);
-        points: 6
-
-      - title: "Explain immutability"
+      - title: "Purpose of <meta>"
         type: TEXT
-        question: "Why is avoiding direct object mutation helpful?"
-        correctAnswer: ""
-        points: 4
+        question: "What is the purpose of meta tags?"
+        points: 3
 
-      - title: "Array push"
+      - title: "Which attribute?"
         type: MCQ
-        question: |
-          What does `arr.push(x)` return?
-        options: ["the new array", "the removed item", "the new length", "undefined"]
-        correctAnswer: "the new length"
+        question: "Which attribute sets an image’s alternative text?"
+        options: ["src", "alt", "href", "name"]
+        correctAnswer: "alt"
         points: 3
 
-      - title: "Find item"
-        type: CODE
-        question: "Find the first number > 10 in nums: const nums=[5,12,8,20];"
-        correctAnswer: |
-          nums.find(n => n > 10);
-        points: 5
+      - title: "True or false: <div> is semantic"
+        type: TRUE_FALSE
+        question: "<div> is considered a semantic tag."
+        correctAnswer: "false"
+        points: 2
 
-      - title: "Spread operator"
-        type: TEXT
-        question: "Explain what the spread operator (...) does for arrays."
-        correctAnswer: ""
-        points: 3
-
-      - title: "Sort array"
-        type: CODE
-        question: "Sort numbers ascending: const arr = [3,1,2];"
-        correctAnswer: |
-          arr.sort((a,b)=>a-b);
-        points: 5
-
-      - title: "Map transformation"
-        type: CODE
-        question: "Return an array of doubled values: [1,2,3]"
-        correctAnswer: |
-          [1,2,3].map(x => x*2);
-        points: 4
-
-
-  # ───────────────────────────────────────────────────────────────
-  # 4. LOOPS & CONTROL FLOW (NEW)
-  # ───────────────────────────────────────────────────────────────
-  - name: Loops & Control Flow
-    UUID: js-loops-flow
+  - name: HTML Forms
     description: >
-      Learn how loops, iteration, and decision structures work.
-    icon: Repeat
+      Learn how to build forms, input fields, labels, and submit actions.
+    icon: FileInput
     difficultyLevel: BEGINNER
     estimatedTimeMin: 40
     hasBonusTasks: false
     sequence: 4
 
-    contentMarkdown: "labs/loops/README.md"
-    contentHtml: "labs/loops/README.html"
-
-    assets:
-      - path: "labs/loops/flowchart.png"
-        type: "image"
+    contentMarkdown: "labs/html-forms/README.md"
+    contentHtml: "labs/html-forms/README.html"
 
     exercises:
-      - title: "Loop output"
+      - title: "What is the correct input type?"
         type: MCQ
-        question: |
-          How many times will this run?
-          for (let i=0; i<3; i++) { console.log(i); }
-        options: ["1", "2", "3", "4"]
-        correctAnswer: "3"
-        points: 4
+        question: "Which type do you use for an email field?"
+        options: ["text", "email", "mail", "submit"]
+        correctAnswer: "email"
+        points: 3
 
-      - title: "While loop condition"
+      - title: "Form submit behavior"
         type: TRUE_FALSE
-        question: "A while loop may never execute if its condition is false at the beginning."
-        correctAnswer: "true"
-        points: 3
-
-      - title: "Fix infinite loop"
-        type: CODE
-        question: |
-          Fix this:
-          let x = 0;
-          while (x < 5) {
-            console.log(x);
-          }
-        correctAnswer: |
-          let x = 0;
-          while (x < 5) {
-            console.log(x);
-            x++;
-          }
-        points: 6
-
-      - title: "Switch case"
-        type: MCQ
-        question: "Which keyword ends a switch case?"
-        options: ["stop", "terminate", "break", "return"]
-        correctAnswer: "break"
-        points: 3
-
-      - title: "Explain loop choice"
-        type: TEXT
-        question: "When would you prefer forEach over a for-loop?"
-        correctAnswer: ""
-        points: 3
-
-      - title: "Continue keyword"
-        type: TRUE_FALSE
-        question: "The `continue` keyword skips the current iteration."
+        question: "A form submission reloads the page by default."
         correctAnswer: "true"
         points: 2
 
-      - title: "Loop sum"
+      - title: "Fix the form"
         type: CODE
-        question: "Sum numbers 1 to 5 using a loop."
-        correctAnswer: |
-          let sum=0;
-          for(let i=1;i<=5;i++){ sum+=i; }
-        points: 5
-
-      - title: "Nested loops"
-        type: TEXT
-        question: "What is a drawback of using nested loops?"
-        correctAnswer: ""
-        points: 3
-
-      - title: "Ternary operator"
-        type: MCQ
-        question: "Which operator is the ternary operator in JS?"
-        options: ["?:", "??", "=>", "::"]
-        correctAnswer: "?:"
-        points: 3
-
-      - title: "Break vs return"
-        type: TEXT
-        question: "Explain when you'd use break instead of return."
-        correctAnswer: ""
-        points: 3
-
-
-  # ───────────────────────────────────────────────────────────────
-  # 5. DOM & EVENTS (NEW)
-  # ───────────────────────────────────────────────────────────────
-  - name: DOM & Events
-    UUID: js-dom-events
-    description: >
-      Learn how to select elements, update the DOM, and attach event listeners.
-    icon: LayoutDashboard
-    difficultyLevel: BEGINNER
-    estimatedTimeMin: 50
-    hasBonusTasks: true
-    sequence: 5
-
-    contentMarkdown: "labs/dom/README.md"
-    contentHtml: "labs/dom/README.html"
-
-    assets:
-      - path: "labs/dom/example.html"
-        type: "html"
-      - path: "labs/dom/dom.png"
-        type: "image"
-
-    exercises:
-      - title: "Select element"
-        type: MCQ
         question: |
-          Which method selects an element by ID?
-        options: ["getElement()", "selectId()", "query()", "document.getElementById()"]
-        correctAnswer: "document.getElementById()"
+          Fix invalid form markup:
+          <form>
+            <label>Email</label>
+            <input>
+            <button>Submit</button>
+          </form>
+        correctAnswer: |
+          <form>
+            <label for="email">Email</label>
+            <input id="email" type="email" />
+            <button type="submit">Submit</button>
+          </form>
+        points: 8
+
+      - title: "Explain autocomplete"
+        type: TEXT
+        question: "What does the autocomplete attribute do?"
         points: 4
 
-      - title: "Click event"
-        type: CODE
-        question: "Add a click listener to a button with id='btn'."
-        correctAnswer: |
-          document.getElementById("btn").addEventListener("click", ()=>{});
-        points: 6
+      - title: "Which input for range?"
+        type: MCQ
+        question: "Which input type creates a slider?"
+        options: ["number", "range", "scroll", "slide"]
+        correctAnswer: "range"
+        points: 3
 
-      - title: "Text content"
+      - title: "Required field"
         type: TRUE_FALSE
-        question: "`innerText` and `textContent` always behave the same."
+        question: "Adding required prevents form submission if empty."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add placeholder"
+        type: CODE
+        question: |
+          Add a placeholder to this field:
+          <input type="text" />
+        correctAnswer: |
+          <input type="text" placeholder="Enter text" />
+        points: 3
+
+      - title: "Explain label for"
+        type: TEXT
+        question: "Why is the 'for' attribute important in labels?"
+        points: 3
+
+      - title: "What is <fieldset> for?"
+        type: MCQ
+        question: "What is the purpose of <fieldset>?"
+        options: ["Layout", "Grouping form controls", "Navigation", "Styling"]
+        correctAnswer: "Grouping form controls"
+        points: 3
+
+      - title: "Can inputs be nested?"
+        type: TRUE_FALSE
+        question: "You can nest input elements inside each other."
         correctAnswer: "false"
         points: 2
 
-      - title: "Modify DOM"
-        type: CODE
-        question: "Change an element's text to 'Hello': const el = document.querySelector('#msg');"
-        correctAnswer: |
-          el.textContent = "Hello";
-        points: 5
+  - name: HTML Semantic Elements
+    description: >
+      Learn semantic tags such as header, footer, article, nav, and section.
+    icon: Blocks
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 35
+    sequence: 5
 
-      - title: "Explain bubbling"
-        type: TEXT
-        question: "What is event bubbling in the DOM?"
-        correctAnswer: ""
+    contentMarkdown: "labs/html-semantic/README.md"
+    contentHtml: "labs/html-semantic/README.html"
+
+    exercises:
+      - title: "Main purpose"
+        type: MCQ
+        question: "What is the purpose of semantic HTML?"
+        options: [
+          "To make pages pretty",
+          "To give meaning and structure",
+          "To add animations",
+          "To load faster"
+        ]
+        correctAnswer: "To give meaning and structure"
         points: 4
 
-      - title: "Prevent default"
+      - title: "Is <section> semantic?"
+        type: TRUE_FALSE
+        question: "<section> is considered a semantic tag."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the layout"
         type: CODE
-        question: "Prevent a form from submitting."
+        question: |
+          Write a semantic structure replacing <div> placeholders:
+          <div>header</div>
+          <div>nav</div>
+          <div>main</div>
+          <div>footer</div>
         correctAnswer: |
-          form.addEventListener("submit", e => e.preventDefault());
-        points: 5
+          <header></header>
+          <nav></nav>
+          <main></main>
+          <footer></footer>
+        points: 8
 
-      - title: "querySelector"
-        type: MCQ
-        question: "What does document.querySelector('.item') return?"
-        options: ["all items", "first item", "undefined", "a NodeList"]
-        correctAnswer: "first item"
-        points: 3
-
-      - title: "Keyboard event"
+      - title: "Explain <article>"
         type: TEXT
-        question: "When would you use a keydown event?"
-        correctAnswer: ""
+        question: "When should the <article> element be used?"
+        points: 4
+
+      - title: "Which tag?"
+        type: MCQ
+        question: "Which tag represents standalone content?"
+        options: ["section", "article", "span", "aside"]
+        correctAnswer: "article"
         points: 3
 
-      - title: "Add element"
+      - title: "Is <b> semantic?"
+        type: TRUE_FALSE
+        question: "<b> is a semantic tag."
+        correctAnswer: "false"
+        points: 2
+
+      - title: "Fix heading order"
         type: CODE
-        question: "Create and append a div to body."
+        question: |
+          Fix this heading structure:
+          <h1>Main</h1>
+          <h4>Sub</h4>
+          <h2>Another</h2>
         correctAnswer: |
-          const d=document.createElement("div");
-          document.body.appendChild(d);
+          <h1>Main</h1>
+          <h2>Sub</h2>
+          <h2>Another</h2>
         points: 6
 
-      - title: "Remove element"
-        type: CODE
-        question: "Remove element el from DOM."
-        correctAnswer: "el.remove();"
+      - title: "Explain <aside>"
+        type: TEXT
+        question: "What type of content belongs inside <aside>?"
         points: 3
+
+      - title: "Choose correct tag"
+        type: MCQ
+        question: "Which tag defines navigation links?"
+        options: ["menu", "navigate", "nav", "path"]
+        correctAnswer: "nav"
+        points: 3
+
+      - title: "True/false: <main> can be multiple"
+        type: TRUE_FALSE
+        question: "A page can contain multiple <main> elements."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Links & Media
+    description: >
+      Learn how to use anchor tags, images, video, and audio in HTML.
+    icon: Image
+    difficultyLevel: BEGINNER
+    estimatedTimeMin: 35
+    sequence: 6
+
+    contentMarkdown: "labs/html-media/README.md"
+    contentHtml: "labs/html-media/README.html"
+
+    exercises:
+      - title: "Correct attribute for link"
+        type: MCQ
+        question: "Which attribute specifies a link’s destination URL?"
+        options: ["href", "src", "url", "path"]
+        correctAnswer: "href"
+        points: 3
+
+      - title: "Image alt"
+        type: TRUE_FALSE
+        question: "The alt attribute is required for images."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the link"
+        type: CODE
+        question: |
+          Fix this broken anchor:
+          <a google.com>Search</a>
+        correctAnswer: |
+          <a href="https://google.com">Search</a>
+        points: 6
+
+      - title: "Explain autoplay"
+        type: TEXT
+        question: "Why should autoplay be used cautiously for video?"
+        points: 3
+
+      - title: "Which tag displays audio?"
+        type: MCQ
+        question: "Which element is used to embed audio?"
+        options: ["<mp3>", "<audio>", "<music>", "<sound>"]
+        correctAnswer: "<audio>"
+        points: 3
+
+      - title: "True/false: Videos need controls"
+        type: TRUE_FALSE
+        question: "The controls attribute allows users to play/pause video."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add image attributes"
+        type: CODE
+        question: |
+          Add width=200 and alt="Logo":
+          <img src="logo.png">
+        correctAnswer: |
+          <img src="logo.png" width="200" alt="Logo">
+        points: 5
+
+      - title: "Explain <source>"
+        type: TEXT
+        question: "Why do video/audio tags use <source> elements?"
+        points: 3
+
+      - title: "Which attribute opens new tab?"
+        type: MCQ
+        question: "Which attribute opens a link in a new tab?"
+        options: ["blank", "new", "target='_blank'", "open"]
+        correctAnswer: "target='_blank'"
+        points: 3
+
+      - title: "True/false: <img> needs closing"
+        type: TRUE_FALSE
+        question: "The <img> tag requires a closing tag."
+        correctAnswer: "false"
+        points: 2
+
+  - name: HTML Tables
+    description: >
+      Learn how to create tables, rows, headers, and cells.
+    icon: Table
+    difficultyLevel: BEGINNER
+    sequence: 7
+    estimatedTimeMin: 30
+
+    contentMarkdown: "labs/html-tables/README.md"
+    contentHtml: "labs/html-tables/README.html"
+
+    exercises:
+      - title: "Table header tag"
+        type: MCQ
+        question: "Which tag defines a table header cell?"
+        options: ["<td>", "<thead>", "<th>", "<hc>"]
+        correctAnswer: "<th>"
+        points: 3
+
+      - title: "Row element"
+        type: TRUE_FALSE
+        question: "<tr> defines a table row."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Fix the table"
+        type: CODE
+        question: |
+          Fix this invalid table:
+          <table>
+            <td>Hello</td>
+          </table>
+        correctAnswer: |
+          <table>
+            <tr><td>Hello</td></tr>
+          </table>
+        points: 6
+
+      - title: "Explain <thead> vs <tbody>"
+        type: TEXT
+        question: "What is the difference between <thead> and <tbody>?"
+        points: 3
+
+      - title: "Which tag spans columns?"
+        type: MCQ
+        question: "Which attribute merges multiple columns?"
+        options: ["columns", "span", "colspan", "merge"]
+        correctAnswer: "colspan"
+        points: 3
+
+      - title: "True/false: <caption> describes table"
+        type: TRUE_FALSE
+        question: "<caption> gives a title/description to a table."
+        correctAnswer: "true"
+        points: 2
+
+      - title: "Add table headers"
+        type: CODE
+        question: |
+          Add headers Name and Age:
+          <table>
+            <tr><td>Alice</td><td>20</td></tr>
+          </table>
+        correctAnswer: |
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Age</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Alice</td><td>20</td></tr>
+            </tbody>
+          </table>
+        points: 7
+
+      - title: "Explain when to use <tfoot>"
+        type: TEXT
+        question: "What content belongs inside <tfoot>?"
+        points: 3
+
+      - title: "Which tag for cell?"
+        type: MCQ
+        question: "Which tag defines a standard cell?"
+        options: ["<td>", "<tr>", "<table>", "<tdata>"]
+        correctAnswer: "<td>"
+        points: 3
+
+      - title: "True/false: Tables are for layout"
+        type: TRUE_FALSE
+        question: "Tables should be used for layout instead of CSS."
+        correctAnswer: "false"
+        points: 2
