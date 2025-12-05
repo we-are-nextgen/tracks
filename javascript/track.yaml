@@ -10,7 +10,7 @@ estimatedTimeMin: 180
 rewardPoints: 50
 domainName: Software & Application Engineering
 community: "Contribute to startup MVPs or open-source projects"
-ruleValue: '*'
+badgeRuleValue: '*'
 
 # Labs associated with this track
 labs:
