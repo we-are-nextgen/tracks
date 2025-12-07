@@ -28,6 +28,7 @@ labs:
 
     contentMarkdown: "labs/html-basics/README.md"
     contentHtml: "labs/html-basics/README.html"
+    badgeRuleValue: "CLP"
 
     exercises:
       - title: "Identify the root element"
