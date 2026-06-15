@@ -25,6 +25,7 @@ labs:
     estimatedTimeMin: 30
     hasBonusTasks: true
     sequence: 1
+    educatesWorkshopName: lab-markdown-sample
 
     contentMarkdown: "labs/variables/README.md"
     contentHtml: "labs/variables/README.html"
